@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelead.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>User</h1>
+        <table class="table">
+            <ut>Id <span th:text="${user.userId}"></span></ut>
+            <ut>First name<span th:text="${user.firstName}"></span></ut>
+            <ut>Last name <td th:text="${user.lastName}"></td></ut>
+            <ut>Birth date <td th:text="${user.birthDate}"></td></ut>
+    </div>
+</body>
+</html>

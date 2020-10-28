@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelead.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add user</h1>
+        <form class="form-group" th:object="${user}" th:action="@{/}" th:method="post">
+            <div>
+                <label>First name: </label>
+                <input type="text" th:field="*{firstName}"/>
+                <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" style="color: red;"/>
+            </div>
+            <div>
+                <label>Last name: </label>
+                <input type="text" th:field="*{lastName}"/>
+                <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" style="color: red;"/>
+            </div>
+            <div>
+                <label>Date of birth: </label>
+                <input type="date" th:field="*{birthDateStr}"/>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-dark">Add</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
